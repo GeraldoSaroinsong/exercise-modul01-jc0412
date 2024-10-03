@@ -72,6 +72,7 @@ console.log(capSentence);
 //7. Write a code to swap the case of each character from string 
 let sent : string = "The QuiCk BrOwN Fox";
 let swapSent : string = "";
+console.log(sent.length);
 
 for(let i : number = 0; i < sent.length; i++){
     let swapChar : string = sent.charAt(i); // create a variable to hold the current character
