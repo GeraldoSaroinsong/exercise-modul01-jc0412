@@ -1,16 +1,16 @@
 //1. Write a code to display the multiplication table of a given integer
 let _n1 : number = 9;
-let result : string = '';
+let result : string;
 
 for(let i : number = 1; i <= 10; i++){
     let _mult : string = `${_n1} * ${i} = ${_n1 * (i)}\n`;
-    result += _mult;
+    result += _mult; // this is used to ad new values to an existing one. thus the result
 }
 console.log(result);
 
-// Write a code to check whether a string is a palindrome or not
+//2. Write a code to check whether a string is a palindrome or not
 // Create two string variables to hold the input word and the mirrored result
-let kata : string = "blablabla";
+let kata : string = "malam";
 let mirror : string = "";
 // Create a boolean variable to hold the isPalindrome status and set it to false since not every word is a palindrome
 let isPalindrome : boolean = false;
@@ -33,27 +33,27 @@ if(mirror === kata){
 //3. Write a code to convert centimeter to kilometer
 let _centi : number = 100000;
 let _kilo : number = _centi / 100000;
-console.log(`${_centi} cm = ${_kilo} km`);
+console.log(`${_centi.toLocaleString()} cm = ${_kilo} km`);
 
 //4. Write a code to format number as currency (IDR)
-let nominal : number = 10543748;
+let nominal : number = 15857382;
 let currency : string = `Rp. ${nominal.toLocaleString()}.00`;
 console.log(currency);
 
 //5. Write a code to remove the first occurrence of a given “search string” from a string
 let _kalimat : string = "hello world";
-let _hapus : string = "o";
+let _hapus : string = "ell";
 console.log(_kalimat.replace(_hapus, ""));
 
 //6. Write a code to capitalize the first letter of each word in a string
 let _sentence: string = "hello world, how are you"; //create the variable to hold the input
-let capSentence: string = ''; // create a variable to hold the result
+let capSentence: string = ""; // create a variable to hold the result
 let capNext: boolean = true; // create a boolean variable to flag when to capitalize letter
 
 for(let i = 0; i < _sentence.length; i++){
     // create a variable to hold the letter on the current index
     let char = _sentence.charAt(i);
-    if(char === ' '){ // if the character is a space, just add it to the sentence as is
+    if(char === " "){ // if the character is a space, just add it to the sentence as is
         capSentence += char; 
     }else{
         if(capNext){ // if the capNext value is true, capitalize the letter and set the boolean value to false so the code won't capitalize the next word
@@ -63,7 +63,7 @@ for(let i = 0; i < _sentence.length; i++){
             capSentence += char; 
         }
     }
-    if(char === ' ' || i === _sentence.length){ // if the current character is a space or if it's the last character of a sentence, set the boolean value to true
+    if(char === " " || i === _sentence.length){ // if the current character is a space or if it's the last character of a sentence, set the boolean value to true
         capNext = true; 
     }
 }
