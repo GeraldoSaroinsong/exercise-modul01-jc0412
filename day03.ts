@@ -1,6 +1,6 @@
 //1. Write a code to display the multiplication table of a given integer
 let _n1 : number = 9;
-let result : string;
+let result : string = "";
 
 for(let i : number = 1; i <= 10; i++){
     let _mult : string = `${_n1} * ${i} = ${_n1 * (i)}\n`;
