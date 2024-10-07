@@ -3,32 +3,35 @@ let _n1 : number = 9;
 let result : string = "";
 
 for(let i : number = 1; i <= 10; i++){
-    let _mult : string = `${_n1} * ${i} = ${_n1 * (i)}\n`;
-    result += _mult; // this is used to ad new values to an existing one. thus the result
+    result = result + `${_n1} x ${i}\n`; // add new values to the existing one in the variable
+    console.log(result);
 }
 console.log(result);
 
 //2. Write a code to check whether a string is a palindrome or not
 // Create two string variables to hold the input word and the mirrored result
-let kata : string = "malam";
+let kata : string = "kata";
 let mirror : string = "";
 // Create a boolean variable to hold the isPalindrome status and set it to false since not every word is a palindrome
 let isPalindrome : boolean = false;
-
+ 
 // Create a loop to repeat up to the length of the input word
-for(let i : number = kata.length; i > 0; i--){
+for(let i : number = kata.length - 1; i >= 0; i--){
     // Write a code to seperate each character starting from the last one
-    let kebalikan : string = kata.slice(i-1, i);
-    console.log(kebalikan);
-    // Store each character into the mirror variable
-    mirror += kebalikan;
+    //mirror = mirror + kata.slice(i-1, i); // spell the input word backwards and add each character to the mirror variable
+    //mirror = mirror + kata.charAt(i);
+    mirror = mirror + kata[i];
+    console.log(mirror);
 }
+
 // write a code to check if the mirrored result is exactly the same as the input word
+let palindrome : string = "";
 if(mirror === kata){
-    console.log(`${kata} is a palindrome`);
+    palindrome = `${kata} is a palindrome`;
 }else{
-    console.log(`${kata} is not a palindrome`);
+    palindrome = `${kata} is not a palindrome`;
 }
+console.log(palindrome);
 
 //3. Write a code to convert centimeter to kilometer
 let _centi : number = 100000;
@@ -41,33 +44,25 @@ let currency : string = `Rp. ${nominal.toLocaleString()}.00`;
 console.log(currency);
 
 //5. Write a code to remove the first occurrence of a given “search string” from a string
-let _kalimat : string = "hello world";
-let _hapus : string = "ell";
-console.log(_kalimat.replace(_hapus, ""));
+let kalimat5 : string = "hello world";
+let hapus5 : string = "ell";
+console.log(kalimat5.replace(hapus5, ""));
 
 //6. Write a code to capitalize the first letter of each word in a string
-let _sentence: string = "hello world, how are you"; //create the variable to hold the input
-let capSentence: string = ""; // create a variable to hold the result
-let capNext: boolean = true; // create a boolean variable to flag when to capitalize letter
 
-for(let i = 0; i < _sentence.length; i++){
-    // create a variable to hold the letter on the current index
-    let char = _sentence.charAt(i);
-    if(char === " "){ // if the character is a space, just add it to the sentence as is
-        capSentence += char; 
+let kalimat6 : string = "hElLo, woRlD. hOW aRe You";
+let hasil6 : string = "";
+for(let i : number = 0; i <= kalimat6.length; i++){ // loop to access each character
+    let karakter : string = kalimat6.charAt(i); // variable to hold the current character
+    let charPrev2 : string = kalimat6.charAt(i - 2) // variable to hold the 2 characters before the current one
+    if(i === 0 || charPrev2 === "."){ // check if the current character is in index 0 or if it's a new sentence, which is after a period and space
+        hasil6 += karakter.toUpperCase(); // if the condition is met, convert the character to uppercase
     }else{
-        if(capNext){ // if the capNext value is true, capitalize the letter and set the boolean value to false so the code won't capitalize the next word
-            capSentence += char.toUpperCase(); 
-            capNext = false; 
-        }else{ // if the boolean value is false, just add the character to the sentence as is
-            capSentence += char; 
-        }
+        hasil6 += karakter.toLowerCase(); // convert the rest of the characters to lowercase
     }
-    if(char === " " || i === _sentence.length){ // if the current character is a space or if it's the last character of a sentence, set the boolean value to true
-        capNext = true; 
-    }
+    console.log(hasil6);
 }
-console.log(capSentence);
+console.log(hasil6);
 
 //7. Write a code to swap the case of each character from string 
 let sent : string = "The QuiCk BrOwN Fox";
@@ -120,7 +115,7 @@ if(typeof(data) === "string"){
 console.log(dataType);
 
 //11. Write a code to change every letter a into * from a string of input
-let inputString = 'halo semuanya';
-let resultString = inputString.replace(/a/g, '*'); //use a global flag (g) to change every letter in the sentence and not just the first one
+let inputString = 'hAlo semuanya';
+let resultString = inputString.replace(/[aA]/g, '*'); //use a global flag (g) to change every letter in the sentence and not just the first one
 
 console.log(resultString);
